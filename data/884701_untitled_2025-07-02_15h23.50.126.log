@@ -1,0 +1,137 @@
+4.3892 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+4.3897 	INFO 	Loaded monitor calibration from ['2025_07_02 14:21']
+4.5960 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001D399789060>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001D399789000>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001D399896470>, multiSample=False, name='window1', numSamples=2, pos=[560.0, 240.0], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+4.5961 	EXP 	window1: backgroundImage = ''
+4.5961 	EXP 	window1: backgroundFit = 'none'
+4.6022 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6029 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6036 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6044 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6052 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6057 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6063 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6072 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6075 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6078 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6085 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6092 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6098 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6104 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6110 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6117 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6123 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6127 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6132 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6140 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6144 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6148 	DEBUG 	Uploading Texture Font fontname to graphics card
+4.6172 	DEBUG 	Upload of Texture Font fontname complete
+4.6231 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6240 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6248 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.6251 	DEBUG 	Uploading Texture Font fontname to graphics card
+4.6260 	DEBUG 	Upload of Texture Font fontname complete
+4.6278 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+4.6278 	EXP 	window1: recordFrameIntervals = False
+4.7997 	EXP 	window1: recordFrameIntervals = True
+4.9831 	EXP 	Screen (0) actual frame rate measured at 59.99Hz
+4.9831 	EXP 	window1: recordFrameIntervals = False
+4.9882 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9886 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9894 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9904 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9913 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9922 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9927 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9935 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9944 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9953 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.9956 	DEBUG 	Uploading Texture Font fontname to graphics card
+4.9961 	DEBUG 	Upload of Texture Font fontname complete
+5.2566 	INFO 	keyboard.Keyboard is using ptb backend.
+5.2567 	EXP 	untitled: status = STARTED
+5.3226 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Any text\n\nincluding line breaks', units='height', win=Window(...), wrapWidth=1)
+5.3606 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, image='C:/Users/mattp/Pictures/image (9).png', interpolate=True, mask=None, maskParams=None, name='image', opacity=1, ori=0.0, pos=array([-0.5,  0. ]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+5.3642 	EXP 	Created image_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, image='C:/Users/mattp/Pictures/image (10).png', interpolate=True, mask=None, maskParams=None, name='image_2', opacity=1, ori=0.0, pos=array([0.5, 0. ]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+5.3660 	EXP 	Created rt_fb2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='rt_fb2', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+0.0045 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+0.0172 	EXP 	text: autoDraw = True
+0.0172 	EXP 	image: autoDraw = True
+0.0172 	EXP 	image_2: autoDraw = True
+0.6702 	DATA 	Mouse: Left button down, pos=(139,332)
+0.8034 	DATA 	Mouse:  Left button up, pos=(139,332)
+1.0178 	EXP 	text: autoDraw = False
+1.7543 	DATA 	Mouse: Left button down, pos=(707,332)
+1.7678 	EXP 	text: autoDraw = False
+1.7678 	EXP 	image: autoDraw = False
+1.7678 	EXP 	image_2: autoDraw = False
+1.7678 	EXP 	rt_fb2: height = 0.1
+1.7678 	EXP 	rt_fb2: height = 0.1
+1.7678 	EXP 	rt_fb2: height = 0.1
+1.7678 	EXP 	rt_fb2: text = 'RT: 1.75 seconds'
+1.7678 	EXP 	rt_fb2: autoDraw = True
+1.8539 	DATA 	Mouse:  Left button up, pos=(707,332)
+2.7533 	EXP 	New trial (rep=1, index=0): <Trial 1 (0 in rep 1) data={'thisN': 1, 'thisTrialN': 0, 'thisRepN': 1}>
+2.7679 	EXP 	rt_fb2: autoDraw = False
+2.7679 	EXP 	rt_fb2: autoDraw = False
+2.7679 	EXP 	text: autoDraw = True
+2.7679 	EXP 	image: autoDraw = True
+2.7679 	EXP 	image_2: autoDraw = True
+3.5206 	DATA 	Mouse: Left button down, pos=(71,372)
+3.6536 	DATA 	Mouse:  Left button up, pos=(71,372)
+3.7680 	EXP 	text: autoDraw = False
+3.8870 	DATA 	Mouse: Left button down, pos=(295,337)
+3.9901 	DATA 	Mouse:  Left button up, pos=(295,337)
+4.5207 	DATA 	Mouse: Left button down, pos=(628,325)
+4.5346 	EXP 	text: autoDraw = False
+4.5346 	EXP 	image: autoDraw = False
+4.5346 	EXP 	image_2: autoDraw = False
+4.5346 	EXP 	rt_fb2: height = 0.1
+4.5346 	EXP 	rt_fb2: height = 0.1
+4.5346 	EXP 	rt_fb2: height = 0.1
+4.5346 	EXP 	rt_fb2: text = 'RT: 1.751 seconds'
+4.5346 	EXP 	rt_fb2: autoDraw = True
+4.6208 	DATA 	Mouse:  Left button up, pos=(628,325)
+5.5200 	EXP 	New trial (rep=2, index=0): <Trial 2 (0 in rep 2) data={'thisN': 2, 'thisTrialN': 0, 'thisRepN': 2}>
+5.5346 	EXP 	rt_fb2: autoDraw = False
+5.5346 	EXP 	rt_fb2: autoDraw = False
+5.5346 	EXP 	text: autoDraw = True
+5.5346 	EXP 	image: autoDraw = True
+5.5346 	EXP 	image_2: autoDraw = True
+5.7705 	DATA 	Mouse: Left button down, pos=(186,330)
+5.8871 	DATA 	Mouse:  Left button up, pos=(188,330)
+6.1394 	DATA 	Mouse: Left button down, pos=(627,330)
+6.1515 	EXP 	text: autoDraw = False
+6.1515 	EXP 	image: autoDraw = False
+6.1515 	EXP 	image_2: autoDraw = False
+6.1515 	EXP 	rt_fb2: height = 0.1
+6.1515 	EXP 	rt_fb2: height = 0.1
+6.1515 	EXP 	rt_fb2: height = 0.1
+6.1515 	EXP 	rt_fb2: text = 'RT: 0.603 seconds'
+6.1515 	EXP 	rt_fb2: autoDraw = True
+6.2537 	DATA 	Mouse:  Left button up, pos=(627,330)
+7.1366 	EXP 	New trial (rep=3, index=0): <Trial 3 (0 in rep 3) data={'thisN': 3, 'thisTrialN': 0, 'thisRepN': 3}>
+7.1513 	EXP 	rt_fb2: autoDraw = False
+7.1513 	EXP 	rt_fb2: autoDraw = False
+7.1513 	EXP 	text: autoDraw = True
+7.1513 	EXP 	image: autoDraw = True
+7.1513 	EXP 	image_2: autoDraw = True
+8.1517 	EXP 	text: autoDraw = False
+10.5872 	DATA 	Mouse: Left button down, pos=(612,441)
+10.6011 	EXP 	text: autoDraw = False
+10.6011 	EXP 	image: autoDraw = False
+10.6011 	EXP 	image_2: autoDraw = False
+10.6011 	EXP 	rt_fb2: height = 0.1
+10.6011 	EXP 	rt_fb2: height = 0.1
+10.6011 	EXP 	rt_fb2: height = 0.1
+10.6011 	EXP 	rt_fb2: text = 'RT: 3.434 seconds'
+10.6011 	EXP 	rt_fb2: autoDraw = True
+10.7040 	DATA 	Mouse:  Left button up, pos=(612,441)
+10.8729 	DATA 	Keypress: escape
+10.9701 	EXP 	untitled: status = STOPPED
+10.9846 	EXP 	rt_fb2: autoDraw = False
+10.9866 	EXP 	untitled: status = STOPPED
+10.9889 	INFO 	saved data to 'C:\\Users\\mattp\\Documents\\GitHub\\Rhodes_Experiment\\data/884701_untitled_2025-07-02_15h23.50.126.csv'
+10.9894 	INFO 	saved data to C:\Users\mattp\Documents\GitHub\Rhodes_Experiment\data/884701_untitled_2025-07-02_15h23.50.126.psydat
+11.0228 	DEBUG 	Saving data for untitled ExperimentHandler
+11.0240 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.

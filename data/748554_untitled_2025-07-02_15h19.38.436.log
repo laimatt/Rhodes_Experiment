@@ -1,0 +1,158 @@
+15.3146 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+15.3151 	INFO 	Loaded monitor calibration from ['2025_07_02 14:21']
+16.0502 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000232DF2166B0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000232DF216710>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x00000232E75765F0>, multiSample=False, name='window1', numSamples=2, pos=[560.0, 240.0], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+16.0503 	EXP 	window1: backgroundImage = ''
+16.0503 	EXP 	window1: backgroundFit = 'none'
+16.0635 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0642 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0649 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0657 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0667 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0671 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0677 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0686 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0689 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0692 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0698 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0705 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0711 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0717 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0723 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0730 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0737 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0740 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0745 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0753 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0760 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0774 	DEBUG 	Uploading Texture Font fontname to graphics card
+16.0823 	DEBUG 	Upload of Texture Font fontname complete
+16.0881 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0890 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0898 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.0900 	DEBUG 	Uploading Texture Font fontname to graphics card
+16.0942 	DEBUG 	Upload of Texture Font fontname complete
+16.0966 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+16.0966 	EXP 	window1: recordFrameIntervals = False
+16.2516 	EXP 	window1: recordFrameIntervals = True
+16.4351 	EXP 	Screen (0) actual frame rate measured at 60.00Hz
+16.4351 	EXP 	window1: recordFrameIntervals = False
+16.4404 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4408 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4416 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4425 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4434 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4443 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4447 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4455 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4464 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4472 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+16.4475 	DEBUG 	Uploading Texture Font fontname to graphics card
+16.4481 	DEBUG 	Upload of Texture Font fontname complete
+16.7146 	INFO 	keyboard.Keyboard is using ptb backend.
+16.7146 	EXP 	untitled: status = STARTED
+16.9923 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Any text\n\nincluding line breaks', units='height', win=Window(...), wrapWidth=1)
+17.0106 	EXP 	Created image_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, image='C:/Users/mattp/Pictures/image (10).png', interpolate=True, mask=None, maskParams=None, name='image_2', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+17.0129 	EXP 	Created fb = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fb', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+17.0135 	EXP 	Created feedback_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='feedback_text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+0.0060 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+0.0214 	EXP 	text: autoDraw = True
+0.0214 	EXP 	image_2: autoDraw = True
+0.5071 	DATA 	Mouse: Left button down, pos=(380,315)
+0.5363 	EXP 	text: autoDraw = False
+0.5363 	EXP 	image_2: autoDraw = False
+0.5363 	EXP 	fb: foreColor = <psychopy.colors.Color: black, alpha=1.0>
+0.5363 	EXP 	fb: height = 0.1
+0.5363 	EXP 	fb: height = 0.1
+0.5363 	EXP 	fb: height = 0.1
+0.5363 	EXP 	fb: text = 'no key_resp component found - look at the Std out window for info'
+0.5363 	EXP 	feedback_text: height = 0.05
+0.5363 	EXP 	feedback_text: height = 0.05
+0.5363 	EXP 	feedback_text: height = 0.05
+0.5363 	EXP 	feedback_text: text = 'Response time was: 0.5021238999997877'
+0.5363 	EXP 	fb: autoDraw = True
+0.5363 	EXP 	feedback_text: autoDraw = True
+0.6079 	DATA 	Mouse:  Left button up, pos=(380,316)
+1.5236 	EXP 	New trial (rep=1, index=0): <Trial 1 (0 in rep 1) data={'thisN': 1, 'thisTrialN': 0, 'thisRepN': 1}>
+1.5381 	EXP 	fb: autoDraw = False
+1.5381 	EXP 	feedback_text: autoDraw = False
+1.5381 	EXP 	text: autoDraw = True
+1.5381 	EXP 	image_2: autoDraw = True
+2.3420 	DATA 	Mouse: Left button down, pos=(367,331)
+2.3549 	EXP 	text: autoDraw = False
+2.3549 	EXP 	image_2: autoDraw = False
+2.3549 	EXP 	fb: foreColor = <psychopy.colors.Color: black, alpha=1.0>
+2.3549 	EXP 	fb: text = 'no key_resp component found - look at the Std out window for info'
+2.3549 	EXP 	feedback_text: height = 0.05
+2.3549 	EXP 	feedback_text: height = 0.05
+2.3549 	EXP 	feedback_text: height = 0.05
+2.3549 	EXP 	feedback_text: text = 'Response time was: 0.81858450000027'
+2.3549 	EXP 	fb: autoDraw = True
+2.3549 	EXP 	feedback_text: autoDraw = True
+2.4079 	DATA 	Mouse:  Left button up, pos=(367,331)
+3.3417 	EXP 	New trial (rep=2, index=0): <Trial 2 (0 in rep 2) data={'thisN': 2, 'thisTrialN': 0, 'thisRepN': 2}>
+3.3550 	EXP 	fb: autoDraw = False
+3.3550 	EXP 	feedback_text: autoDraw = False
+3.3550 	EXP 	fb: autoDraw = False
+3.3550 	EXP 	feedback_text: autoDraw = False
+3.3550 	EXP 	text: autoDraw = True
+3.3550 	EXP 	image_2: autoDraw = True
+3.7237 	DATA 	Mouse: Left button down, pos=(367,331)
+3.7383 	EXP 	text: autoDraw = False
+3.7383 	EXP 	image_2: autoDraw = False
+3.7383 	EXP 	fb: foreColor = <psychopy.colors.Color: black, alpha=1.0>
+3.7383 	EXP 	fb: text = 'no key_resp component found - look at the Std out window for info'
+3.7383 	EXP 	feedback_text: height = 0.05
+3.7383 	EXP 	feedback_text: height = 0.05
+3.7383 	EXP 	feedback_text: height = 0.05
+3.7383 	EXP 	feedback_text: text = 'Response time was: 0.3821960999998737'
+3.7383 	EXP 	fb: autoDraw = True
+3.7383 	EXP 	feedback_text: autoDraw = True
+3.8080 	DATA 	Mouse:  Left button up, pos=(367,331)
+4.7236 	EXP 	New trial (rep=3, index=0): <Trial 3 (0 in rep 3) data={'thisN': 3, 'thisTrialN': 0, 'thisRepN': 3}>
+4.7383 	EXP 	fb: autoDraw = False
+4.7383 	EXP 	feedback_text: autoDraw = False
+4.7383 	EXP 	fb: autoDraw = False
+4.7383 	EXP 	feedback_text: autoDraw = False
+4.7383 	EXP 	text: autoDraw = True
+4.7383 	EXP 	image_2: autoDraw = True
+5.3427 	DATA 	Mouse: Left button down, pos=(340,332)
+5.3550 	EXP 	text: autoDraw = False
+5.3550 	EXP 	image_2: autoDraw = False
+5.3550 	EXP 	fb: foreColor = <psychopy.colors.Color: black, alpha=1.0>
+5.3550 	EXP 	fb: text = 'no key_resp component found - look at the Std out window for info'
+5.3550 	EXP 	feedback_text: height = 0.05
+5.3550 	EXP 	feedback_text: height = 0.05
+5.3550 	EXP 	feedback_text: height = 0.05
+5.3550 	EXP 	feedback_text: text = 'Response time was: 0.6192383000002337'
+5.3550 	EXP 	fb: autoDraw = True
+5.3550 	EXP 	feedback_text: autoDraw = True
+5.4577 	DATA 	Mouse:  Left button up, pos=(340,332)
+6.3422 	EXP 	New trial (rep=4, index=0): <Trial 4 (0 in rep 4) data={'thisN': 4, 'thisTrialN': 0, 'thisRepN': 4}>
+6.3556 	EXP 	fb: autoDraw = False
+6.3556 	EXP 	feedback_text: autoDraw = False
+6.3556 	EXP 	fb: autoDraw = False
+6.3556 	EXP 	feedback_text: autoDraw = False
+6.3556 	EXP 	text: autoDraw = True
+6.3556 	EXP 	image_2: autoDraw = True
+7.3550 	EXP 	text: autoDraw = False
+9.5572 	DATA 	Mouse: Left button down, pos=(408,275)
+9.5715 	EXP 	text: autoDraw = False
+9.5715 	EXP 	image_2: autoDraw = False
+9.5715 	EXP 	fb: foreColor = <psychopy.colors.Color: black, alpha=1.0>
+9.5715 	EXP 	fb: text = 'no key_resp component found - look at the Std out window for info'
+9.5715 	EXP 	feedback_text: height = 0.05
+9.5715 	EXP 	feedback_text: height = 0.05
+9.5715 	EXP 	feedback_text: height = 0.05
+9.5715 	EXP 	feedback_text: text = 'Response time was: 3.2151896999998826'
+9.5715 	EXP 	fb: autoDraw = True
+9.5715 	EXP 	feedback_text: autoDraw = True
+9.6411 	DATA 	Mouse:  Left button up, pos=(408,275)
+10.5714 	EXP 	fb: autoDraw = False
+10.5714 	EXP 	feedback_text: autoDraw = False
+10.5714 	EXP 	fb: autoDraw = False
+10.5714 	EXP 	feedback_text: autoDraw = False
+10.5736 	EXP 	untitled: status = STOPPED
+10.5764 	INFO 	saved data to 'C:\\Users\\mattp\\Documents\\GitHub\\Rhodes_Experiment\\data/748554_untitled_2025-07-02_15h19.38.436.csv'
+10.5777 	INFO 	saved data to C:\Users\mattp\Documents\GitHub\Rhodes_Experiment\data/748554_untitled_2025-07-02_15h19.38.436.psydat
+10.6420 	DEBUG 	Saving data for untitled ExperimentHandler
+10.6486 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
