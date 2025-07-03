@@ -618,6 +618,7 @@ function trialRoutineEnd(snapshot) {
 var feedback_2MaxDurationReached;
 var fb_text;
 var fb_col;
+var debug_text;
 var feedback_2MaxDuration;
 var feedback_2Components;
 function feedback_2RoutineBegin(snapshot) {
@@ -635,6 +636,7 @@ function feedback_2RoutineBegin(snapshot) {
     // Run 'Begin Routine' code from fb_code_2
     fb_text = "no key_resp component found - look at the Std out window for info";
     fb_col = "black";
+    debug_text = "default";
     try {
         if (key_resp.corr) {
             fb_text = `Correct! ${util.pad(Number.parseFloat(avg_acc).toFixed(2), 1)}`;

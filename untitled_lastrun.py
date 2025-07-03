@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on July 03, 2025, at 14:33
+    on July 03, 2025, at 16:38
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -669,7 +669,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             if isinstance(trainingBlock, data.TrialHandler2) and thisTrainingBlock.thisN != trainingBlock.thisTrial.thisN:
                 continueRoutine = False
             trial.forceEnded = routineForceEnded = not continueRoutine
-            while continueRoutine and routineTimer.getTime() < 20.0:
+            while continueRoutine:
                 # get current time
                 t = routineTimer.getTime()
                 tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -697,20 +697,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     # update params
                     pass
                 
-                # if text is stopping this frame...
-                if text.status == STARTED:
-                    # is it time to stop? (based on global clock, using actual start)
-                    if tThisFlipGlobal > text.tStartRefresh + 20-frameTolerance:
-                        # keep track of stop time/frame for later
-                        text.tStop = t  # not accounting for scr refresh
-                        text.tStopRefresh = tThisFlipGlobal  # on global time
-                        text.frameNStop = frameN  # exact frame index
-                        # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'text.stopped')
-                        # update status
-                        text.status = FINISHED
-                        text.setAutoDraw(False)
-                
                 # *image* updates
                 
                 # if image is starting this frame...
@@ -730,20 +716,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 if image.status == STARTED:
                     # update params
                     pass
-                
-                # if image is stopping this frame...
-                if image.status == STARTED:
-                    # is it time to stop? (based on global clock, using actual start)
-                    if tThisFlipGlobal > image.tStartRefresh + 20-frameTolerance:
-                        # keep track of stop time/frame for later
-                        image.tStop = t  # not accounting for scr refresh
-                        image.tStopRefresh = tThisFlipGlobal  # on global time
-                        image.frameNStop = frameN  # exact frame index
-                        # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'image.stopped')
-                        # update status
-                        image.status = FINISHED
-                        image.setAutoDraw(False)
                 
                 # *image_2* updates
                 
@@ -797,20 +769,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     waitOnFlip = True
                     win.callOnFlip(key_resp.clock.reset)  # t=0 on next screen flip
                     win.callOnFlip(key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                
-                # if key_resp is stopping this frame...
-                if key_resp.status == STARTED:
-                    # is it time to stop? (based on global clock, using actual start)
-                    if tThisFlipGlobal > key_resp.tStartRefresh + 20-frameTolerance:
-                        # keep track of stop time/frame for later
-                        key_resp.tStop = t  # not accounting for scr refresh
-                        key_resp.tStopRefresh = tThisFlipGlobal  # on global time
-                        key_resp.frameNStop = frameN  # exact frame index
-                        # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'key_resp.stopped')
-                        # update status
-                        key_resp.status = FINISHED
-                        key_resp.status = FINISHED
                 if key_resp.status == STARTED and not waitOnFlip:
                     theseKeys = key_resp.getKeys(keyList=['left','right'], ignoreKeys=["escape"], waitRelease=False)
                     _key_resp_allKeys.extend(theseKeys)
@@ -893,13 +851,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 count_acc = 0
             if(cleared_blocks == 5):
                 trials.finished = True
-            # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
-            if trial.maxDurationReached:
-                routineTimer.addTime(-trial.maxDuration)
-            elif trial.forceEnded:
-                routineTimer.reset()
-            else:
-                routineTimer.addTime(-20.000000)
+            # the Routine "trial" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
             
             # --- Prepare to start Routine "feedback_2" ---
             # create an object to store info about Routine feedback_2
@@ -924,6 +877,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             
             fb_text = 'no key_resp component found - look at the Std out window for info'
             fb_col = 'black'
+            debug_text = 'default'
             
             try:
                 if key_resp.corr:
