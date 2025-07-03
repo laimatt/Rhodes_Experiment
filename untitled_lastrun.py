@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on July 03, 2025, at 16:38
+    on July 03, 2025, at 17:59
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -388,7 +388,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     image_2 = visual.ImageStim(
         win=win,
         name='image_2', 
-        image='C:/Users/mattp/Pictures/image (10).png', mask=None, anchor='center',
+        image='default.png', mask=None, anchor='center',
         ori=0.0, pos=(0.5, 0), draggable=False, size=(0.5, 0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
@@ -606,7 +606,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             method='random', 
             extraInfo=expInfo, 
             originPath=-1, 
-            trialList=data.importConditions('stims.csv'), 
+            trialList=data.importConditions('stimuli.csv'), 
             seed=None, 
         )
         thisExp.addLoop(trainingBlock)  # add the loop to the experiment
@@ -639,7 +639,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             trial.status = NOT_STARTED
             continueRoutine = True
             # update component parameters for each repeat
-            text.setText(stimuli)
+            text.setText(Stim
+            )
+            image_2.setImage("C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/" + Stim + ".png")
             # create starting attributes for key_resp
             key_resp.keys = []
             key_resp.rt = []

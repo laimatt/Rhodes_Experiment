@@ -1,3 +1,33 @@
-﻿stimuli,corrAns
-choose left,left
-choose right,right
+﻿Stim_Number,Stim,Vowel,Grammar,Grammaticality,Exposure,MP3,IPAsingular,IPAplural,ViolationSyllable,ViolationType,corrAns
+1,budo,back,VH,yes,familiar,budomu,ˈbu . do,ˈbu . do . mu,0,none,left
+2,dimi,front,VH,yes,familiar,dimimi,ˈdi . mi,ˈdi . mi . mi,0,none,left
+3,dupu,back,VH,yes,familiar,dupumu,ˈdu . pu,ˈdu . pu . mu,0,none,left
+4,gene,front,VH,yes,familiar,genemi,ˈge . ne,ˈge . ne . mi,0,none,left
+5,gipi,front,VH,yes,familiar,gipimi,ˈgi . pi,ˈgi . pi . mi,0,none,left
+6,gomo,back,VH,yes,familiar,gomomu,ˈgo . mo,ˈgo . mo . mu,0,none,left
+7,kize,front,VH,yes,familiar,kizemi,ˈki . ze,ˈki . ze . mi,0,none,left
+8,kudu,back,VH,yes,familiar,kudumu,ˈku . du,ˈku . du . mu,0,none,left
+9,mike,front,VH,yes,familiar,mikemi,ˈmi . ke,ˈmi . ke . mi,0,none,left
+10,neme,front,VH,yes,familiar,nememi,ˈne . me,ˈne . me . mi,0,none,left
+11,pebi,front,VH,yes,familiar,pebimi,ˈpe . bi,ˈpe . bi . mi,0,none,left
+12,sosu,back,VH,yes,familiar,sosumu,ˈso . su,ˈso . su . mu,0,none,left
+13,tegi,front,VH,yes,familiar,tegimi,ˈte . gi,ˈte . gi . mi,0,none,left
+14,tozo,back,VH,yes,familiar,tozomu,ˈto . zo,ˈto . zo . mu,0,none,left
+15,zopu,back,VH,yes,familiar,zopumu,ˈzo . pu,ˈzo . pu . mu,0,none,left
+16,zuno,back,VH,yes,familiar,zunomu,ˈzu . no,ˈzu . no . mu,0,none,left
+34,budo,back,VH,no,familiar,budomi,ˈbu . do,ˈbu . do . mi,3,Suffix,left
+35,dimi,front,VH,no,familiar,dimimu,ˈdi . mi,ˈdi . mi . mu,3,Suffix,left
+38,dupu,back,VH,no,familiar,dupumi,ˈdu . pu,ˈdu . pu . mi,3,Suffix,left
+40,gene,front,VH,no,familiar,genemu,ˈge . ne,ˈge . ne . mu,3,Suffix,left
+42,gipi,front,VH,no,familiar,gipimu,ˈgi . pi,ˈgi . pi . mu,3,Suffix,left
+43,gomo,back,VH,no,familiar,gomomi,ˈgo . mo,ˈgo . mo . mi,3,Suffix,left
+45,kize,front,VH,no,familiar,kizemu,ˈki . ze,ˈki . ze . mu,3,Suffix,left
+47,kudu,back,VH,no,familiar,kudumi,ˈku . du,ˈku . du . mi,3,Suffix,left
+48,mike,front,VH,no,familiar,mikemu,ˈmi . ke,ˈmi . ke . mu,3,Suffix,left
+50,neme,front,VH,no,familiar,nememu,ˈne . me,ˈne . me . mu,3,Suffix,left
+52,pebi,front,VH,no,familiar,pebimu,ˈpe . bi,ˈpe . bi . mu,3,Suffix,left
+55,sosu,back,VH,no,familiar,sosumi,ˈso . su,ˈso . su . mi,3,Suffix,left
+56,tegi,front,VH,no,familiar,tegimu,ˈte . gi,ˈte . gi . mu,3,Suffix,left
+59,tozo,back,VH,no,familiar,tozomi,ˈto . zo,ˈto . zo . mi,3,Suffix,left
+62,zopu,back,VH,no,familiar,zopumi,ˈzo . pu,ˈzo . pu . mi,3,Suffix,left
+64,zuno,back,VH,no,familiar,zunomi,ˈzu . no,ˈzu . no . mi,3,Suffix,left
