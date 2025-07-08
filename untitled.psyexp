@@ -81,6 +81,23 @@
   </Settings>
   <Routines>
     <Routine name="trial">
+      <CodeComponent name="code" plugin="None">
+        <Param val="import psychtoolbox as ptb&amp;#10;from psychopy import sound, visual&amp;#10;import random&amp;#10;&amp;#10;# initialize the big dictionary...&amp;#10;good = {}&amp;#10;bad = {}&amp;#10;# import csv file&amp;#10;csvData = data.importConditions('stims.csv')&amp;#10;&amp;#10;# meld all dictionaries together and store in the big one&amp;#10;for k in csvData[0]:&amp;#10;    good[k] = []&amp;#10;    bad[k] = []&amp;#10;   &amp;#10;for row in csvData:&amp;#10;    target = good if row['choose'] == 'yes' else bad&amp;#10;    for k in row:&amp;#10;        target[k].append(row[k])" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as ptb from 'psychtoolbox';&amp;#10;import {sound, visual} from 'psychopy';&amp;#10;import * as random from 'random';&amp;#10;good = {};&amp;#10;bad = {};&amp;#10;csvData = data.importConditions(&quot;stims.csv&quot;);&amp;#10;for (var k, _pj_c = 0, _pj_a = csvData[0], _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    k = _pj_a[_pj_c];&amp;#10;    good[k] = [];&amp;#10;    bad[k] = [];&amp;#10;}&amp;#10;for (var row, _pj_c = 0, _pj_a = csvData, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    row = _pj_a[_pj_c];&amp;#10;    target = ((row[&quot;choose&quot;] === &quot;yes&quot;) ? good : bad);&amp;#10;    for (var k, _pj_f = 0, _pj_d = row, _pj_e = _pj_d.length; (_pj_f &lt; _pj_e); _pj_f += 1) {&amp;#10;        k = _pj_d[_pj_f];&amp;#10;        target[k].push(row[k]);&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="current_trials = 0&amp;#10;avg_acc = -1&amp;#10;count_acc = 0&amp;#10;total_trials = 0&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="current_trials = 0;&amp;#10;avg_acc = (- 1);&amp;#10;count_acc = 0;&amp;#10;total_trials = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="if (Math.random.randint(0, 1)) {&amp;#10;    left_index = Math.random.randint(0, (good[&quot;Stim&quot;].length - 1));&amp;#10;    left_image_name = good[&quot;Stim&quot;][left_index];&amp;#10;    sound_to_play = ((&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/&quot; + left_image_name) + &quot;mu_48000.wav&quot;);&amp;#10;    right_index = Math.random.randint(0, (bad[&quot;Stim&quot;].length - 1));&amp;#10;    right_image_name = bad[&quot;Stim&quot;][right_index];&amp;#10;    text_to_show = left_image_name;&amp;#10;    answer = &quot;left&quot;;&amp;#10;} else {&amp;#10;    right_index = Math.random.randint(0, (good[&quot;Stim&quot;].length - 1));&amp;#10;    right_image_name = good[&quot;Stim&quot;][right_index];&amp;#10;    sound_to_play = ((&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/&quot; + right_image_name) + &quot;mu_48000.wav&quot;);&amp;#10;    left_index = Math.random.randint(0, (bad[&quot;Stim&quot;].length - 1));&amp;#10;    left_image_name = bad[&quot;Stim&quot;][left_index];&amp;#10;    text_to_show = right_image_name;&amp;#10;    answer = &quot;right&quot;;&amp;#10;}&amp;#10;left_image = ((&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + left_image_name) + &quot;.png&quot;);&amp;#10;right_image = ((&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + right_image_name) + &quot;.png&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="#print(len(good[0]))&amp;#10;#print(len(bad[0]))&amp;#10;#print(good)&amp;#10;#print(bad)&amp;#10;if random.randint(0, 1):&amp;#10;    left_index = random.randint(0, len(good['Stim']) - 1)&amp;#10;    left_image_name = good['Stim'][left_index]&amp;#10;    sound_to_play = &quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/&quot; + left_image_name + &quot;mu_48000.wav&quot;&amp;#10;    &amp;#10;    right_index = random.randint(0, len(bad['Stim']) - 1)&amp;#10;    right_image_name = bad['Stim'][right_index]&amp;#10;    &amp;#10;    text_to_show = left_image_name&amp;#10;    answer = 'left'&amp;#10;else:&amp;#10;    right_index = random.randint(0, len(good['Stim']) - 1)&amp;#10;    right_image_name = good['Stim'][right_index]&amp;#10;    sound_to_play = &quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/&quot; + right_image_name + &quot;mu_48000.wav&quot;&amp;#10;    &amp;#10;    left_index = random.randint(0, len(bad['Stim']) - 1)&amp;#10;    left_image_name = bad['Stim'][left_index]&amp;#10;    &amp;#10;    text_to_show = right_image_name&amp;#10;    answer = 'right'&amp;#10;#    left_image = good['Stim'][random.randint(0, len(good) - 1)]&amp;#10;&amp;#10;left_image = &quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + left_image_name + &quot;.png&quot;&amp;#10;right_image = &quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + right_image_name + &quot;.png&quot;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="current_trials = (current_trials + 1);&amp;#10;total_trials = (total_trials + 1);&amp;#10;count_acc = (count_acc + key_resp.corr);&amp;#10;avg_acc = (count_acc / current_trials);&amp;#10;if ((current_trials &gt;= 3)) {&amp;#10;    if ((avg_acc &gt;= 0.8)) {&amp;#10;        cleared_blocks = (cleared_blocks + 1);&amp;#10;    }&amp;#10;    trainingBlock.finished = true;&amp;#10;    current_trials = 0;&amp;#10;    count_acc = 0;&amp;#10;}&amp;#10;if ((cleared_blocks === 5)) {&amp;#10;    trials.finished = true;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="current_trials = current_trials + 1&amp;#10;total_trials = total_trials + 1&amp;#10;count_acc = count_acc + key_resp.corr&amp;#10;avg_acc = count_acc/current_trials&amp;#10;&amp;#10;&amp;#10;if(current_trials &gt;= 3):&amp;#10;    if(avg_acc &gt;= 0.80):&amp;#10;        cleared_blocks = cleared_blocks + 1&amp;#10;    trainingBlock.finished = True&amp;#10;    current_trials = 0&amp;#10;    count_acc = 0&amp;#10;if(cleared_blocks == 5):&amp;#10;    trials.finished = True" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <RoutineSettingsComponent name="trial" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -119,72 +136,14 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="$Stim&amp;#10;" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$text_to_show + &quot;\n&quot; + answer&amp;#10;&amp;#10;&amp;#10;" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
-      <ImageComponent name="image" plugin="None">
-        <Param val="center" valType="str" updates="constant" name="anchor"/>
-        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
-        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
-        <Param val="C:/Users/mattp/Pictures/image (9).png" valType="file" updates="constant" name="image"/>
-        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
-        <Param val="" valType="str" updates="constant" name="mask"/>
-        <Param val="image" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(-0.5, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-      </ImageComponent>
-      <ImageComponent name="image_2" plugin="None">
-        <Param val="center" valType="str" updates="constant" name="anchor"/>
-        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
-        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
-        <Param val="$&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + Stim + &quot;.png&quot;" valType="file" updates="set every repeat" name="image"/>
-        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
-        <Param val="" valType="str" updates="constant" name="mask"/>
-        <Param val="image_2" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0.5, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="20" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-      </ImageComponent>
       <KeyboardComponent name="key_resp" plugin="None">
         <Param val="'left','right'" valType="list" updates="constant" name="allowedKeys"/>
-        <Param val="$corrAns" valType="str" updates="constant" name="correctAns"/>
+        <Param val="$answer" valType="str" updates="constant" name="correctAns"/>
         <Param val="" valType="str" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="True" valType="bool" updates="constant" name="discard previous"/>
@@ -202,23 +161,82 @@
         <Param val="True" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
-      <CodeComponent name="code" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="total_trials = 0&amp;#10;avg_acc = -1&amp;#10;count_acc = 0" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="total_trials = 0;&amp;#10;avg_acc = (- 1);&amp;#10;count_acc = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="total_trials = (total_trials + 1);&amp;#10;count_acc = (count_acc + key_resp.corr);&amp;#10;avg_acc = (count_acc / total_trials);&amp;#10;if ((total_trials &gt;= 3)) {&amp;#10;    if ((avg_acc &gt;= 0.8)) {&amp;#10;        cleared_blocks = (cleared_blocks + 1);&amp;#10;    }&amp;#10;    trainingBlock.finished = true;&amp;#10;    total_trials = 0;&amp;#10;    count_acc = 0;&amp;#10;}&amp;#10;if ((cleared_blocks === 5)) {&amp;#10;    trials.finished = true;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="total_trials = total_trials + 1&amp;#10;count_acc = count_acc + key_resp.corr&amp;#10;avg_acc = count_acc/total_trials&amp;#10;&amp;#10;&amp;#10;if(total_trials &gt;= 3):&amp;#10;    if(avg_acc &gt;= 0.80):&amp;#10;        cleared_blocks = cleared_blocks + 1&amp;#10;    trainingBlock.finished = True&amp;#10;    total_trials = 0&amp;#10;    count_acc = 0&amp;#10;if(cleared_blocks == 5):&amp;#10;    trials.finished = True" valType="extendedCode" updates="constant" name="End Routine"/>
+      <ImageComponent name="l_image" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="code" valType="code" updates="None" name="name"/>
-      </CodeComponent>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
+        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
+        <Param val="$ left_image" valType="file" updates="set every repeat" name="image"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="" valType="str" updates="constant" name="mask"/>
+        <Param val="l_image" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(-0.5, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </ImageComponent>
+      <ImageComponent name="r_image" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
+        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
+        <Param val="$ right_image" valType="file" updates="set every repeat" name="image"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="" valType="str" updates="constant" name="mask"/>
+        <Param val="r_image" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0.5, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="20" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </ImageComponent>
+      <SoundComponent name="sound_1" plugin="None">
+        <Param val="" valType="str" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="hamming"/>
+        <Param val="sound_1" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="$ sound_to_play" valType="str" updates="set every repeat" name="sound"/>
+        <Param val="-1" valType="code" updates="None" name="speakerIndex"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="constant" name="stopWithRoutine"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+        <Param val="1" valType="num" updates="constant" name="volume"/>
+      </SoundComponent>
     </Routine>
     <Routine name="feedback">
       <RoutineSettingsComponent name="feedback" plugin="None">
@@ -393,8 +411,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="fb_text = &quot;no key_resp component found - look at the Std out window for info&quot;;&amp;#10;fb_col = &quot;black&quot;;&amp;#10;debug_text = &quot;default&quot;;&amp;#10;try {&amp;#10;    if (key_resp.corr) {&amp;#10;        fb_text = `Correct! ${util.pad(Number.parseFloat(avg_acc).toFixed(2), 1)}`;&amp;#10;        fb_col = &quot;green&quot;;&amp;#10;    } else {&amp;#10;        fb_text = `Incorrect! ${util.pad(Number.parseFloat(avg_acc).toFixed(2), 1)}`;&amp;#10;        fb_col = &quot;red&quot;;&amp;#10;    }&amp;#10;    debug_text = `${cleared_blocks} cleared&amp;#10;trial ${total_trials}`&amp;#10;;&amp;#10;} catch(e) {&amp;#10;    console.log(&quot;Make sure that you have:\n1. a routine with a keyboard component in it called \&quot;key_resp\&quot;\n 2. In the key_Resp component in the \&quot;data\&quot; tab select \&quot;Store Correct\&quot;.\n in the \&quot;Correct answer\&quot; field use \&quot;$corrAns\&quot; (where corrAns is a column header in your conditions file indicating the correct key press&quot;);&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="# Check if the key press was correct or not.&amp;#10;# This routine will need to follow another routine with a &amp;#10;# key response component in it called &quot;key_resp&quot; &amp;#10;# and the &quot;store correct&quot; option enabled. &amp;#10;# If your experiment is missing that you will &amp;#10;# not receive feedback and an error message will be displayed.&amp;#10;&amp;#10;# If a key response component has been added and feedback is functioning.&amp;#10;# 1. remove lines 12, 13, 15, 22 and 23.&amp;#10;# 2. dedent lines 16 to 21&amp;#10;&amp;#10;fb_text = 'no key_resp component found - look at the Std out window for info'&amp;#10;fb_col = 'black'&amp;#10;debug_text = 'default'&amp;#10;&amp;#10;try:&amp;#10;    if key_resp.corr:&amp;#10;        fb_text = f'Correct! {avg_acc:.2f}'&amp;#10;        fb_col = 'green'&amp;#10;    else:&amp;#10;        fb_text = f'Incorrect! {avg_acc:.2f}'&amp;#10;        fb_col = 'red'&amp;#10;    debug_text = f'{cleared_blocks} cleared \n trial {total_trials}'&amp;#10;except:&amp;#10;    print('Make sure that you have:\n1. a routine with a keyboard component in it called &quot;key_resp&quot;\n 2. In the key_Resp component in the &quot;data&quot; tab select &quot;Store Correct&quot;.\n in the &quot;Correct answer&quot; field use &quot;$corrAns&quot; (where corrAns is a column header in your conditions file indicating the correct key press')&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="fb_text = &quot;no key_resp component found - look at the Std out window for info&quot;;&amp;#10;fb_col = &quot;black&quot;;&amp;#10;debug_text = &quot;default&quot;;&amp;#10;try {&amp;#10;    if (key_resp.corr) {&amp;#10;        fb_text = `Correct! ${util.pad(Number.parseFloat(avg_acc).toFixed(2), 1)}`;&amp;#10;        fb_col = &quot;green&quot;;&amp;#10;    } else {&amp;#10;        fb_text = `Incorrect! ${util.pad(Number.parseFloat(avg_acc).toFixed(2), 1)}`;&amp;#10;        fb_col = &quot;red&quot;;&amp;#10;    }&amp;#10;    debug_text = `${cleared_blocks} cleared&amp;#10;trial ${current_trials}`&amp;#10;;&amp;#10;} catch(e) {&amp;#10;    console.log(&quot;Make sure that you have:\n1. a routine with a keyboard component in it called \&quot;key_resp\&quot;\n 2. In the key_Resp component in the \&quot;data\&quot; tab select \&quot;Store Correct\&quot;.\n in the \&quot;Correct answer\&quot; field use \&quot;$corrAns\&quot; (where corrAns is a column header in your conditions file indicating the correct key press&quot;);&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# Check if the key press was correct or not.&amp;#10;# This routine will need to follow another routine with a &amp;#10;# key response component in it called &quot;key_resp&quot; &amp;#10;# and the &quot;store correct&quot; option enabled. &amp;#10;# If your experiment is missing that you will &amp;#10;# not receive feedback and an error message will be displayed.&amp;#10;&amp;#10;# If a key response component has been added and feedback is functioning.&amp;#10;# 1. remove lines 12, 13, 15, 22 and 23.&amp;#10;# 2. dedent lines 16 to 21&amp;#10;&amp;#10;fb_text = 'no key_resp component found - look at the Std out window for info'&amp;#10;fb_col = 'black'&amp;#10;debug_text = 'default'&amp;#10;&amp;#10;try:&amp;#10;    if key_resp.corr:&amp;#10;        fb_text = f'Correct! {avg_acc:.2f}'&amp;#10;        fb_col = 'green'&amp;#10;    else:&amp;#10;        fb_text = f'Incorrect! {avg_acc:.2f}'&amp;#10;        fb_col = 'red'&amp;#10;    debug_text = f'{cleared_blocks} cleared \n trial {current_trials}'&amp;#10;except:&amp;#10;    print('Make sure that you have:\n1. a routine with a keyboard component in it called &quot;key_resp&quot;\n 2. In the key_Resp component in the &quot;data&quot; tab select &quot;Store Correct&quot;.\n in the &quot;Correct answer&quot; field use &quot;$corrAns&quot; (where corrAns is a column header in your conditions file indicating the correct key press')&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -540,6 +558,41 @@
         <Param val="code_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>
+    <Routine name="code_init">
+      <RoutineSettingsComponent name="code_init" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="code_init" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="code_3" plugin="None">
+        <Param val="import psychtoolbox as ptb&amp;#10;from psychopy import sound, visual&amp;#10;import random&amp;#10;&amp;#10;# initialize the big dictionary...&amp;#10;good = {}&amp;#10;bad = {}&amp;#10;# import csv file&amp;#10;csvData = data.importConditions('stims.csv')&amp;#10;&amp;#10;# meld all dictionaries together and store in the big one&amp;#10;for k in csvData[0]:&amp;#10;    good[k] = []&amp;#10;    bad[k] = []&amp;#10;   &amp;#10;for row in csvData:&amp;#10;    target = good if row['choose'] == 'yes' else bad&amp;#10;    for k in row:&amp;#10;        target[k].append(row[k])" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as ptb from 'psychtoolbox';&amp;#10;import {sound, visual} from 'psychopy';&amp;#10;import * as random from 'random';&amp;#10;good = {};&amp;#10;bad = {};&amp;#10;csvData = data.importConditions(&quot;stims.csv&quot;);&amp;#10;for (var k, _pj_c = 0, _pj_a = csvData[0], _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    k = _pj_a[_pj_c];&amp;#10;    good[k] = [];&amp;#10;    bad[k] = [];&amp;#10;}&amp;#10;for (var row, _pj_c = 0, _pj_a = csvData, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    row = _pj_a[_pj_c];&amp;#10;    target = ((row[&quot;choose&quot;] === &quot;yes&quot;) ? good : bad);&amp;#10;    for (var k, _pj_f = 0, _pj_d = row, _pj_e = _pj_d.length; (_pj_f &lt; _pj_e); _pj_f += 1) {&amp;#10;        k = _pj_d[_pj_f];&amp;#10;        target[k].push(row[k]);&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="current_trials = 0&amp;#10;avg_acc = -1&amp;#10;count_acc = 0&amp;#10;total_trials = 0&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="current_trials = 0;&amp;#10;avg_acc = (- 1);&amp;#10;count_acc = 0;&amp;#10;total_trials = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="if (Math.random.randint(0, 1)) {&amp;#10;    left_index = Math.random.randint(0, (good[&quot;Stim&quot;].length - 1));&amp;#10;    left_image_name = good[&quot;Stim&quot;][left_index];&amp;#10;    sound = ((&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/&quot; + left_image_name) + &quot;mu_48000.wav&quot;);&amp;#10;    right_index = Math.random.randint(0, (bad[&quot;Stim&quot;].length - 1));&amp;#10;    right_image_name = bad[&quot;Stim&quot;][right_index];&amp;#10;    text_to_show = left_image_name;&amp;#10;    answer = &quot;left&quot;;&amp;#10;} else {&amp;#10;    right_index = Math.random.randint(0, (good[&quot;Stim&quot;].length - 1));&amp;#10;    right_image_name = good[&quot;Stim&quot;][right_index];&amp;#10;    sound = ((&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/&quot; + right_image_name) + &quot;mu_48000.wav&quot;);&amp;#10;    left_index = Math.random.randint(0, (bad[&quot;Stim&quot;].length - 1));&amp;#10;    left_image_name = bad[&quot;Stim&quot;][left_index];&amp;#10;    text_to_show = right_image_name;&amp;#10;    answer = &quot;right&quot;;&amp;#10;}&amp;#10;left_image = ((&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + left_image_name) + &quot;.png&quot;);&amp;#10;right_image = ((&quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + right_image_name) + &quot;.png&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="#print(len(good[0]))&amp;#10;#print(len(bad[0]))&amp;#10;#print(good)&amp;#10;#print(bad)&amp;#10;if random.randint(0, 1):&amp;#10;    left_index = random.randint(0, len(good['Stim']) - 1)&amp;#10;    left_image_name = good['Stim'][left_index]&amp;#10;    sound = &quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/&quot; + left_image_name + &quot;mu_48000.wav&quot;&amp;#10;    &amp;#10;    right_index = random.randint(0, len(bad['Stim']) - 1)&amp;#10;    right_image_name = bad['Stim'][right_index]&amp;#10;    &amp;#10;    text_to_show = left_image_name&amp;#10;    answer = 'left'&amp;#10;else:&amp;#10;    right_index = random.randint(0, len(good['Stim']) - 1)&amp;#10;    right_image_name = good['Stim'][right_index]&amp;#10;    sound = &quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/&quot; + right_image_name + &quot;mu_48000.wav&quot;&amp;#10;    &amp;#10;    left_index = random.randint(0, len(bad['Stim']) - 1)&amp;#10;    left_image_name = bad['Stim'][left_index]&amp;#10;    &amp;#10;    text_to_show = right_image_name&amp;#10;    answer = 'right'&amp;#10;#    left_image = good['Stim'][random.randint(0, len(good) - 1)]&amp;#10;&amp;#10;left_image = &quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + left_image_name + &quot;.png&quot;&amp;#10;right_image = &quot;C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/&quot; + right_image_name + &quot;.png&quot;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="#current_trials = current_trials + 1&amp;#10;#total_trials = total_trials + 1&amp;#10;#count_acc = count_acc + key_resp.corr&amp;#10;#avg_acc = count_acc/current_trials&amp;#10;#&amp;#10;#&amp;#10;#if(current_trials &gt;= 3):&amp;#10;#    if(avg_acc &gt;= 0.80):&amp;#10;#        cleared_blocks = cleared_blocks + 1&amp;#10;#    trainingBlock.finished = True&amp;#10;#    current_trials = 0&amp;#10;#    count_acc = 0&amp;#10;#if(cleared_blocks == 5):&amp;#10;#    trials.finished = True" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_3" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
   </Routines>
   <Flow>
     <LoopInitiator loopType="TrialHandler" name="trials">
@@ -556,8 +609,8 @@
     <Routine name="routine_2"/>
     <LoopInitiator loopType="TrialHandler" name="trainingBlock">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('Stim_Number', 1), ('Stim', 'budo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'budomu'), ('IPAsingular', 'ˈbu . do'), ('IPAplural', 'ˈbu . do . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 2), ('Stim', 'dimi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'dimimi'), ('IPAsingular', 'ˈdi . mi'), ('IPAplural', 'ˈdi . mi . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 3), ('Stim', 'dupu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'dupumu'), ('IPAsingular', 'ˈdu . pu'), ('IPAplural', 'ˈdu . pu . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 4), ('Stim', 'gene'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'genemi'), ('IPAsingular', 'ˈge . ne'), ('IPAplural', 'ˈge . ne . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 5), ('Stim', 'gipi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'gipimi'), ('IPAsingular', 'ˈgi . pi'), ('IPAplural', 'ˈgi . pi . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 6), ('Stim', 'gomo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'gomomu'), ('IPAsingular', 'ˈgo . mo'), ('IPAplural', 'ˈgo . mo . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 7), ('Stim', 'kize'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'kizemi'), ('IPAsingular', 'ˈki . ze'), ('IPAplural', 'ˈki . ze . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 8), ('Stim', 'kudu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'kudumu'), ('IPAsingular', 'ˈku . du'), ('IPAplural', 'ˈku . du . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 9), ('Stim', 'mike'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'mikemi'), ('IPAsingular', 'ˈmi . ke'), ('IPAplural', 'ˈmi . ke . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 10), ('Stim', 'neme'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'nememi'), ('IPAsingular', 'ˈne . me'), ('IPAplural', 'ˈne . me . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 11), ('Stim', 'pebi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'pebimi'), ('IPAsingular', 'ˈpe . bi'), ('IPAplural', 'ˈpe . bi . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 12), ('Stim', 'sosu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'sosumu'), ('IPAsingular', 'ˈso . su'), ('IPAplural', 'ˈso . su . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 13), ('Stim', 'tegi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'tegimi'), ('IPAsingular', 'ˈte . gi'), ('IPAplural', 'ˈte . gi . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 14), ('Stim', 'tozo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'tozomu'), ('IPAsingular', 'ˈto . zo'), ('IPAplural', 'ˈto . zo . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 15), ('Stim', 'zopu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'zopumu'), ('IPAsingular', 'ˈzo . pu'), ('IPAplural', 'ˈzo . pu . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 16), ('Stim', 'zuno'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'zunomu'), ('IPAsingular', 'ˈzu . no'), ('IPAplural', 'ˈzu . no . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 34), ('Stim', 'budo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'budomi'), ('IPAsingular', 'ˈbu . do'), ('IPAplural', 'ˈbu . do . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 35), ('Stim', 'dimi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'dimimu'), ('IPAsingular', 'ˈdi . mi'), ('IPAplural', 'ˈdi . mi . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 38), ('Stim', 'dupu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'dupumi'), ('IPAsingular', 'ˈdu . pu'), ('IPAplural', 'ˈdu . pu . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 40), ('Stim', 'gene'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'genemu'), ('IPAsingular', 'ˈge . ne'), ('IPAplural', 'ˈge . ne . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 42), ('Stim', 'gipi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'gipimu'), ('IPAsingular', 'ˈgi . pi'), ('IPAplural', 'ˈgi . pi . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 43), ('Stim', 'gomo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'gomomi'), ('IPAsingular', 'ˈgo . mo'), ('IPAplural', 'ˈgo . mo . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 45), ('Stim', 'kize'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'kizemu'), ('IPAsingular', 'ˈki . ze'), ('IPAplural', 'ˈki . ze . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 47), ('Stim', 'kudu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'kudumi'), ('IPAsingular', 'ˈku . du'), ('IPAplural', 'ˈku . du . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 48), ('Stim', 'mike'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'mikemu'), ('IPAsingular', 'ˈmi . ke'), ('IPAplural', 'ˈmi . ke . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 50), ('Stim', 'neme'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'nememu'), ('IPAsingular', 'ˈne . me'), ('IPAplural', 'ˈne . me . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 52), ('Stim', 'pebi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'pebimu'), ('IPAsingular', 'ˈpe . bi'), ('IPAplural', 'ˈpe . bi . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 55), ('Stim', 'sosu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'sosumi'), ('IPAsingular', 'ˈso . su'), ('IPAplural', 'ˈso . su . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 56), ('Stim', 'tegi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'tegimu'), ('IPAsingular', 'ˈte . gi'), ('IPAplural', 'ˈte . gi . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 59), ('Stim', 'tozo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'tozomi'), ('IPAsingular', 'ˈto . zo'), ('IPAplural', 'ˈto . zo . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 62), ('Stim', 'zopu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'zopumi'), ('IPAsingular', 'ˈzo . pu'), ('IPAplural', 'ˈzo . pu . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')]), OrderedDict([('Stim_Number', 64), ('Stim', 'zuno'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'zunomi'), ('IPAsingular', 'ˈzu . no'), ('IPAplural', 'ˈzu . no . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left')])]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="stimuli.csv" valType="file"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Stim_Number', 1), ('Stim', 'budo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'budomu'), ('IPAsingular', '?bu . do'), ('IPAplural', '?bu . do . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left'), ('choose', 'yes')]), OrderedDict([('Stim_Number', 2), ('Stim', 'dimi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'dimimi'), ('IPAsingular', '?di . mi'), ('IPAplural', '?di . mi . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left'), ('choose', 'yes')]), OrderedDict([('Stim_Number', 3), ('Stim', 'dupu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'dupumu'), ('IPAsingular', '?du . pu'), ('IPAplural', '?du . pu . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left'), ('choose', 'yes')]), OrderedDict([('Stim_Number', 4), ('Stim', 'gene'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'genemi'), ('IPAsingular', '?ge . ne'), ('IPAplural', '?ge . ne . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left'), ('choose', 'yes')]), OrderedDict([('Stim_Number', 5), ('Stim', 'gipi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'gipimi'), ('IPAsingular', '?gi . pi'), ('IPAplural', '?gi . pi . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left'), ('choose', 'yes')]), OrderedDict([('Stim_Number', 6), ('Stim', 'gomo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'gomomu'), ('IPAsingular', '?go . mo'), ('IPAplural', '?go . mo . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left'), ('choose', 'yes')]), OrderedDict([('Stim_Number', 7), ('Stim', 'kize'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'kizemi'), ('IPAsingular', '?ki . ze'), ('IPAplural', '?ki . ze . mi'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left'), ('choose', 'yes')]), OrderedDict([('Stim_Number', 8), ('Stim', 'kudu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'yes'), ('Exposure', 'familiar'), ('MP3', 'kudumu'), ('IPAsingular', '?ku . du'), ('IPAplural', '?ku . du . mu'), ('ViolationSyllable', 0), ('ViolationType', 'none'), ('corrAns', 'left'), ('choose', 'yes')]), OrderedDict([('Stim_Number', 48), ('Stim', 'mike'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'mikemu'), ('IPAsingular', '?mi . ke'), ('IPAplural', '?mi . ke . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left'), ('choose', 'no')]), OrderedDict([('Stim_Number', 50), ('Stim', 'neme'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'nememu'), ('IPAsingular', '?ne . me'), ('IPAplural', '?ne . me . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left'), ('choose', 'no')]), OrderedDict([('Stim_Number', 52), ('Stim', 'pebi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'pebimu'), ('IPAsingular', '?pe . bi'), ('IPAplural', '?pe . bi . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left'), ('choose', 'no')]), OrderedDict([('Stim_Number', 55), ('Stim', 'sosu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'sosumi'), ('IPAsingular', '?so . su'), ('IPAplural', '?so . su . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left'), ('choose', 'no')]), OrderedDict([('Stim_Number', 56), ('Stim', 'tegi'), ('Vowel', 'front'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'tegimu'), ('IPAsingular', '?te . gi'), ('IPAplural', '?te . gi . mu'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left'), ('choose', 'no')]), OrderedDict([('Stim_Number', 59), ('Stim', 'tozo'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'tozomi'), ('IPAsingular', '?to . zo'), ('IPAplural', '?to . zo . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left'), ('choose', 'no')]), OrderedDict([('Stim_Number', 62), ('Stim', 'zopu'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'zopumi'), ('IPAsingular', '?zo . pu'), ('IPAplural', '?zo . pu . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left'), ('choose', 'no')]), OrderedDict([('Stim_Number', 64), ('Stim', 'zuno'), ('Vowel', 'back'), ('Grammar', 'VH'), ('Grammaticality', 'no'), ('Exposure', 'familiar'), ('MP3', 'zunomi'), ('IPAsingular', '?zu . no'), ('IPAplural', '?zu . no . mi'), ('ViolationSyllable', 3), ('ViolationType', 'Suffix'), ('corrAns', 'left'), ('choose', 'no')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="stims.csv" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on July 03, 2025, at 17:59
+    on July 08, 2025, at 13:47
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -32,6 +32,26 @@ import sys  # to get file system encoding
 
 from psychopy.hardware import keyboard
 
+# Run 'Before Experiment' code from code
+import psychtoolbox as ptb
+from psychopy import sound, visual
+import random
+
+# initialize the big dictionary...
+good = {}
+bad = {}
+# import csv file
+csvData = data.importConditions('stims.csv')
+
+# meld all dictionaries together and store in the big one
+for k in csvData[0]:
+    good[k] = []
+    bad[k] = []
+   
+for row in csvData:
+    target = good if row['choose'] == 'yes' else bad
+    for k in row:
+        target[k].append(row[k])
 # --- Setup global variables (available in all functions) ---
 # create a device manager to handle hardware (keyboards, mice, mirophones, speakers, etc.)
 deviceManager = hardware.DeviceManager()
@@ -257,6 +277,12 @@ def setupDevices(expInfo, thisExp, win):
             deviceClass='keyboard',
             deviceName='key_resp',
         )
+    # create speaker 'sound_1'
+    deviceManager.addDevice(
+        deviceName='sound_1',
+        deviceClass='psychopy.hardware.speaker.SpeakerDevice',
+        index=-1
+    )
     # return True if completed successfully
     return True
 
@@ -370,34 +396,44 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     cleared_blocks = 0
     
     # --- Initialize components for Routine "trial" ---
+    # Run 'Begin Experiment' code from code
+    current_trials = 0
+    avg_acc = -1
+    count_acc = 0
+    total_trials = 0
+    
     text = visual.TextStim(win=win, name='text',
         text='',
         font='Arial',
         pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
-    image = visual.ImageStim(
+        depth=-1.0);
+    key_resp = keyboard.Keyboard(deviceName='key_resp')
+    l_image = visual.ImageStim(
         win=win,
-        name='image', 
-        image='C:/Users/mattp/Pictures/image (9).png', mask=None, anchor='center',
+        name='l_image', 
+        image='default.png', mask=None, anchor='center',
         ori=0.0, pos=(-0.5, 0), draggable=False, size=(0.5, 0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
-        texRes=128.0, interpolate=True, depth=-1.0)
-    image_2 = visual.ImageStim(
+        texRes=128.0, interpolate=True, depth=-3.0)
+    r_image = visual.ImageStim(
         win=win,
-        name='image_2', 
+        name='r_image', 
         image='default.png', mask=None, anchor='center',
         ori=0.0, pos=(0.5, 0), draggable=False, size=(0.5, 0.5),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
-        texRes=128.0, interpolate=True, depth=-2.0)
-    key_resp = keyboard.Keyboard(deviceName='key_resp')
-    # Run 'Begin Experiment' code from code
-    total_trials = 0
-    avg_acc = -1
-    count_acc = 0
+        texRes=128.0, interpolate=True, depth=-4.0)
+    sound_1 = sound.Sound(
+        'A', 
+        secs=1, 
+        stereo=True, 
+        hamming=True, 
+        speaker='sound_1',    name='sound_1'
+    )
+    sound_1.setVolume(1.0)
     
     # --- Initialize components for Routine "feedback_2" ---
     fb_2 = visual.TextStim(win=win, name='fb_2',
@@ -606,7 +642,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             method='random', 
             extraInfo=expInfo, 
             originPath=-1, 
-            trialList=data.importConditions('stimuli.csv'), 
+            trialList=data.importConditions('stims.csv'), 
             seed=None, 
         )
         thisExp.addLoop(trainingBlock)  # add the loop to the experiment
@@ -634,18 +670,53 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # create an object to store info about Routine trial
             trial = data.Routine(
                 name='trial',
-                components=[text, image, image_2, key_resp],
+                components=[text, key_resp, l_image, r_image, sound_1],
             )
             trial.status = NOT_STARTED
             continueRoutine = True
             # update component parameters for each repeat
-            text.setText(Stim
+            # Run 'Begin Routine' code from code
+            #print(len(good[0]))
+            #print(len(bad[0]))
+            #print(good)
+            #print(bad)
+            if random.randint(0, 1):
+                left_index = random.randint(0, len(good['Stim']) - 1)
+                left_image_name = good['Stim'][left_index]
+                sound_to_play = "C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/" + left_image_name + "mu_48000.wav"
+                
+                right_index = random.randint(0, len(bad['Stim']) - 1)
+                right_image_name = bad['Stim'][right_index]
+                
+                text_to_show = left_image_name
+                answer = 'left'
+            else:
+                right_index = random.randint(0, len(good['Stim']) - 1)
+                right_image_name = good['Stim'][right_index]
+                sound_to_play = "C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/(wav) French male Mathieu/resampled_48000/" + right_image_name + "mu_48000.wav"
+                
+                left_index = random.randint(0, len(bad['Stim']) - 1)
+                left_image_name = bad['Stim'][left_index]
+                
+                text_to_show = right_image_name
+                answer = 'right'
+            #    left_image = good['Stim'][random.randint(0, len(good) - 1)]
+            
+            left_image = "C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/" + left_image_name + ".png"
+            right_image = "C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/" + right_image_name + ".png"
+            text.setText(text_to_show + "\n" + answer
+            
+            
             )
-            image_2.setImage("C:/Users/mattp/Documents/GitHub/Rhodes_Experiment/Images/Language 1 - Vowel Harmony (sample 16 harmonic singular stims)/" + Stim + ".png")
             # create starting attributes for key_resp
             key_resp.keys = []
             key_resp.rt = []
             _key_resp_allKeys = []
+            l_image.setImage( left_image)
+            r_image.setImage( right_image)
+            sound_1.setSound( sound_to_play, secs=1, hamming=True)
+            sound_1.setVolume(1.0, log=False)
+            sound_1.seek(0)
             # store start times for trial
             trial.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             trial.tStart = globalClock.getTime(format='float')
@@ -699,60 +770,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     # update params
                     pass
                 
-                # *image* updates
-                
-                # if image is starting this frame...
-                if image.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    image.frameNStart = frameN  # exact frame index
-                    image.tStart = t  # local t and not account for scr refresh
-                    image.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(image, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image.started')
-                    # update status
-                    image.status = STARTED
-                    image.setAutoDraw(True)
-                
-                # if image is active this frame...
-                if image.status == STARTED:
-                    # update params
-                    pass
-                
-                # *image_2* updates
-                
-                # if image_2 is starting this frame...
-                if image_2.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
-                    # keep track of start time/frame for later
-                    image_2.frameNStart = frameN  # exact frame index
-                    image_2.tStart = t  # local t and not account for scr refresh
-                    image_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(image_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image_2.started')
-                    # update status
-                    image_2.status = STARTED
-                    image_2.setAutoDraw(True)
-                
-                # if image_2 is active this frame...
-                if image_2.status == STARTED:
-                    # update params
-                    pass
-                
-                # if image_2 is stopping this frame...
-                if image_2.status == STARTED:
-                    # is it time to stop? (based on global clock, using actual start)
-                    if tThisFlipGlobal > image_2.tStartRefresh + 20-frameTolerance:
-                        # keep track of stop time/frame for later
-                        image_2.tStop = t  # not accounting for scr refresh
-                        image_2.tStopRefresh = tThisFlipGlobal  # on global time
-                        image_2.frameNStop = frameN  # exact frame index
-                        # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'image_2.stopped')
-                        # update status
-                        image_2.status = FINISHED
-                        image_2.setAutoDraw(False)
-                
                 # *key_resp* updates
                 waitOnFlip = False
                 
@@ -779,12 +796,94 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                         key_resp.rt = _key_resp_allKeys[-1].rt
                         key_resp.duration = _key_resp_allKeys[-1].duration
                         # was this correct?
-                        if (key_resp.keys == str(corrAns)) or (key_resp.keys == corrAns):
+                        if (key_resp.keys == str(answer)) or (key_resp.keys == answer):
                             key_resp.corr = 1
                         else:
                             key_resp.corr = 0
                         # a response ends the routine
                         continueRoutine = False
+                
+                # *l_image* updates
+                
+                # if l_image is starting this frame...
+                if l_image.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    l_image.frameNStart = frameN  # exact frame index
+                    l_image.tStart = t  # local t and not account for scr refresh
+                    l_image.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(l_image, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'l_image.started')
+                    # update status
+                    l_image.status = STARTED
+                    l_image.setAutoDraw(True)
+                
+                # if l_image is active this frame...
+                if l_image.status == STARTED:
+                    # update params
+                    pass
+                
+                # *r_image* updates
+                
+                # if r_image is starting this frame...
+                if r_image.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
+                    # keep track of start time/frame for later
+                    r_image.frameNStart = frameN  # exact frame index
+                    r_image.tStart = t  # local t and not account for scr refresh
+                    r_image.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(r_image, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'r_image.started')
+                    # update status
+                    r_image.status = STARTED
+                    r_image.setAutoDraw(True)
+                
+                # if r_image is active this frame...
+                if r_image.status == STARTED:
+                    # update params
+                    pass
+                
+                # if r_image is stopping this frame...
+                if r_image.status == STARTED:
+                    # is it time to stop? (based on global clock, using actual start)
+                    if tThisFlipGlobal > r_image.tStartRefresh + 20-frameTolerance:
+                        # keep track of stop time/frame for later
+                        r_image.tStop = t  # not accounting for scr refresh
+                        r_image.tStopRefresh = tThisFlipGlobal  # on global time
+                        r_image.frameNStop = frameN  # exact frame index
+                        # add timestamp to datafile
+                        thisExp.timestampOnFlip(win, 'r_image.stopped')
+                        # update status
+                        r_image.status = FINISHED
+                        r_image.setAutoDraw(False)
+                
+                # *sound_1* updates
+                
+                # if sound_1 is starting this frame...
+                if sound_1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sound_1.frameNStart = frameN  # exact frame index
+                    sound_1.tStart = t  # local t and not account for scr refresh
+                    sound_1.tStartRefresh = tThisFlipGlobal  # on global time
+                    # add timestamp to datafile
+                    thisExp.addData('sound_1.started', tThisFlipGlobal)
+                    # update status
+                    sound_1.status = STARTED
+                    sound_1.play(when=win)  # sync with win flip
+                
+                # if sound_1 is stopping this frame...
+                if sound_1.status == STARTED:
+                    # is it time to stop? (based on global clock, using actual start)
+                    if tThisFlipGlobal > sound_1.tStartRefresh + 1-frameTolerance or sound_1.isFinished:
+                        # keep track of stop time/frame for later
+                        sound_1.tStop = t  # not accounting for scr refresh
+                        sound_1.tStopRefresh = tThisFlipGlobal  # on global time
+                        sound_1.frameNStop = frameN  # exact frame index
+                        # add timestamp to datafile
+                        thisExp.timestampOnFlip(win, 'sound_1.stopped')
+                        # update status
+                        sound_1.status = FINISHED
+                        sound_1.stop()
                 
                 # check for quit (typically the Esc key)
                 if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -798,7 +897,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                         thisExp=thisExp, 
                         win=win, 
                         timers=[routineTimer], 
-                        playbackComponents=[]
+                        playbackComponents=[sound_1]
                     )
                     # skip the frame we paused on
                     continue
@@ -825,11 +924,26 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             trial.tStop = globalClock.getTime(format='float')
             trial.tStopRefresh = tThisFlipGlobal
             thisExp.addData('trial.stopped', trial.tStop)
+            # Run 'End Routine' code from code
+            current_trials = current_trials + 1
+            total_trials = total_trials + 1
+            count_acc = count_acc + key_resp.corr
+            avg_acc = count_acc/current_trials
+            
+            
+            if(current_trials >= 3):
+                if(avg_acc >= 0.80):
+                    cleared_blocks = cleared_blocks + 1
+                trainingBlock.finished = True
+                current_trials = 0
+                count_acc = 0
+            if(cleared_blocks == 5):
+                trials.finished = True
             # check responses
             if key_resp.keys in ['', [], None]:  # No response was made
                 key_resp.keys = None
                 # was no response the correct answer?!
-                if str(corrAns).lower() == 'none':
+                if str(answer).lower() == 'none':
                    key_resp.corr = 1;  # correct non-response
                 else:
                    key_resp.corr = 0;  # failed to respond (incorrectly)
@@ -839,20 +953,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             if key_resp.keys != None:  # we had a response
                 trainingBlock.addData('key_resp.rt', key_resp.rt)
                 trainingBlock.addData('key_resp.duration', key_resp.duration)
-            # Run 'End Routine' code from code
-            total_trials = total_trials + 1
-            count_acc = count_acc + key_resp.corr
-            avg_acc = count_acc/total_trials
-            
-            
-            if(total_trials >= 3):
-                if(avg_acc >= 0.80):
-                    cleared_blocks = cleared_blocks + 1
-                trainingBlock.finished = True
-                total_trials = 0
-                count_acc = 0
-            if(cleared_blocks == 5):
-                trials.finished = True
+            sound_1.pause()  # ensure sound has stopped at end of Routine
             # the Routine "trial" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             
@@ -888,7 +989,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 else:
                     fb_text = f'Incorrect! {avg_acc:.2f}'
                     fb_col = 'red'
-                debug_text = f'{cleared_blocks} cleared \n trial {total_trials}'
+                debug_text = f'{cleared_blocks} cleared \n trial {current_trials}'
             except:
                 print('Make sure that you have:\n1. a routine with a keyboard component in it called "key_resp"\n 2. In the key_Resp component in the "data" tab select "Store Correct".\n in the "Correct answer" field use "$corrAns" (where corrAns is a column header in your conditions file indicating the correct key press')
             
